@@ -1,15 +1,20 @@
 from data_generator import *
 
+PATIENT = '1'
+PRACTITIONER = '2'
+APPOINTMENT = '3'
+EXIT = '4'
+
 
 def generate_data_menu():
     output_directory = "output"
 
     while True:
         print("\nSelect a resource to generate:")
-        print("1. Patient")
-        print("2. Practitioner")
-        print("3. Appointment")
-        print("4. Exit")
+        print(f"{PATIENT}. Patient")
+        print(f"{PRACTITIONER}. Practitioner")
+        print(f"{APPOINTMENT}. Appointment")
+        print(f"{EXIT}. Exit")
 
         choice = input("Enter the number from 1 to 4: ")
 
@@ -31,11 +36,11 @@ def generate_data_menu():
 
 
 def generate_resource(choice, num_files, output_directory):
-    if choice == '1':
+    if choice == PATIENT:
         generate_patient(num_files, output_directory)
-    elif choice == '2':
+    elif choice == PRACTITIONER:
         generate_practitioner(num_files, output_directory)
-    elif choice == '3':
+    elif choice == APPOINTMENT:
         generate_appointment(num_files, output_directory)
 
 
